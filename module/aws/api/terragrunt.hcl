@@ -4,6 +4,15 @@ include "root" {
 
 terraform {
   extra_arguments "publish_Vars" {
+    commands = [
+      "apply",
+      "plan",
+      "import",
+      "push",
+      "refresh",
+      "init",
+      "destroy"
+    ]
     required_var_files = [
       "${get_parent_terragrunt_dir()}/common.tfvars",
       "${get_terragrunt_dir()}/env-config/common.tfvars",
